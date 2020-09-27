@@ -9,8 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".resourceManager"
-            android:theme="@style/AppTheme"/>
+        <activity android:name=".hasantha"></activity>
+        <activity android:name=".AudioSelect" />
+        <activity android:name=".insertImages" />
+        <activity android:name=".ImageGallery" />
+        <activity android:name=".homechana" />
+        <activity android:name=".home" />
+        <activity android:name=".Home" />
+        <activity android:name=".Chana" />
+        <activity android:name=".ChanaMain" />
+        <activity
+            android:name=".resourceManager"
+            android:theme="@style/AppTheme" />
         <activity android:name=".Setpassword" />
         <activity android:name=".callrecorder" />
         <activity android:name=".Calculator" />

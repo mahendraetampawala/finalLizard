@@ -316,7 +316,7 @@ public class Calculator extends AppCompatActivity {
 
                 if(db.login(pwd)){
                     Toast.makeText(getApplicationContext(),"Welcome",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), resourceManager.class);
+                    Intent intent = new Intent(getApplicationContext(), Chana.class);
                     startActivity(intent);
                     edittext1.setText("");
                 }
