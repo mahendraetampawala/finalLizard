@@ -6,7 +6,14 @@
     android:layout_height="match_parent"
 
     tools:context=".MainActivity"
-    android:background="@drawable/dark">
+    android:background="@drawable/photo">
+
+    <include
+        android:id="@+id/toolbarX"
+        layout="@layout/toolbar"
+        android:background="#FFFDFD"
+        app:navigationIcon="@android:drawable/btn_star" />
+
 
 
     <EditText
@@ -18,8 +25,9 @@
         android:drawableStart="@drawable/ic_lock_24"
         android:ems="10"
         android:fontFamily="@font/aclonica"
+        android:hint="@string/Username"
         android:inputType="number"
-        android:text="@string/password"
+        android:textAlignment="center"
         android:textColor="#C6FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/confirmupdate"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,8 +43,9 @@
         android:drawableStart="@drawable/ic_lock_24"
         android:ems="10"
         android:fontFamily="@font/aclonica"
+        android:hint="@string/Username"
         android:inputType="number"
-        android:text="@string/confirmation"
+        android:textAlignment="center"
         android:textColor="#C6FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,15 +86,16 @@
         android:drawableStart="@drawable/ic_baseline_account_circle_24"
         android:ems="10"
         android:fontFamily="@font/aclonica"
+        android:hint="@string/Username"
         android:inputType="textPersonName"
-        android:text="@string/Username"
+        android:textAlignment="center"
         android:textColor="#C6FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/uppwttxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.Toolbar
+   <!-- <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="412dp"
         android:layout_height="73dp"
@@ -98,6 +108,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:navigationIcon="@android:drawable/ic_menu_sort_by_size" />
+        app:navigationIcon="@android:drawable/ic_menu_sort_by_size" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

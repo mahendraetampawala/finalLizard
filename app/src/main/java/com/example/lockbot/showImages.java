@@ -1,15 +1,15 @@
 package com.example.lockbot;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
-public class showImages extends AppCompatActivity {
+
+public class showImages extends AppCompatActivity implements RecyclerViewClickInterface{
 
     private DBChana objectDatabaseHandler;
     private RecyclerView objectRecyclerview;
@@ -30,7 +30,7 @@ public class showImages extends AppCompatActivity {
 
     public void getData(View view){
         try {
-            objectRVAdapter = new RVAdapter(objectDatabaseHandler.getImagesData());
+            objectRVAdapter = new RVAdapter(objectDatabaseHandler.getImagesData(),this);
             objectRecyclerview.setHasFixedSize(true);
 
             objectRecyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -42,4 +42,17 @@ public class showImages extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(this, "Long Press to delete selected item...", Toast.LENGTH_SHORT).show();
+
+
+
+
+    }
+
+    @Override
+    public void onLongItemClick(int position) {
+        //   objectRVAdapter.remove(position);
+    }
 }

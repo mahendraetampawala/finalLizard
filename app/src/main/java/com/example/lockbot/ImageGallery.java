@@ -1,10 +1,13 @@
 package com.example.lockbot;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -17,10 +20,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -36,7 +42,7 @@ public class ImageGallery extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_image_gallery);
+        setContentView(R.layout.nav_imagegal);
 
         c1 = findViewById(R.id.galleryCard_1);
         c2 = findViewById(R.id.galleryCard_2);
@@ -47,6 +53,23 @@ public class ImageGallery extends AppCompatActivity implements View.OnClickListe
         c2.setOnClickListener(this);
         c3.setOnClickListener(this);
         c4.setOnClickListener(this);
+
+
+        NavigationView navigationView=findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId()==R.id.nav_home){
+                    startActivity(new Intent(ImageGallery.this,resourceManager.class));
+                }
+                if (item.getItemId()==R.id.nav_gallery){
+                    startActivity(new Intent(ImageGallery.this,homechana.class));
+                }
+                DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
 
     }
     /*
@@ -121,27 +144,24 @@ public class ImageGallery extends AppCompatActivity implements View.OnClickListe
         Intent xi;
 
         switch (view.getId()){
-            case R.id.galleryCard_1:
-                xi = new Intent(this, insertImages.class);
+ /*  */          case R.id.galleryCard_1:
+               xi = new Intent(this, MainActivityX1.class);
+                startActivity(xi);
+              break;
+
+            case R.id.galleryCard_2:
+              xi = new Intent(this, RecordListActivityX1.class);
                 startActivity(xi);
                 break;
 
-              /*
-                if(ActivityCompat.checkSelfPermission(ImageGallery.this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(ImageGallery.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},100);
-                return;
-                }
-               Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE,true);
-                intent.setType("image/=");
-                startActivityForResult(intent,1);
+            case R.id.galleryCard_4:
+                xi=new Intent(this,RecyclerViewClickInterface.class);
+                startActivity(xi);
                 break;
-                */
+       /*  */
 
-            case R.id.galleryCard_2:
-                break;
-        }//onclick
+
+    }//onclick
 
     }//oncreate
 

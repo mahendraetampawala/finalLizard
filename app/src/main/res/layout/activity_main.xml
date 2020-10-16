@@ -1,139 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".MainActivity"
     android:background="@drawable/photo">
 
-    <Button
-        android:id="@+id/setpassword"
-        android:layout_width="341dp"
-        android:layout_height="50dp"
-        android:textColor="#C6FFFFFF"
-        android:background="@drawable/btn_rounded"
-        android:fontFamily="@font/aclonica"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.146" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
-    <EditText
-        android:id="@+id/confirmpwd"
-        android:layout_width="362dp"
-        android:layout_height="55dp"
-        android:background="@drawable/edit_rounded"
-        android:drawableStart="@drawable/ic_lock_24"
-        android:ems="10"
-        android:hint="@string/confirmation"
-        android:fontFamily="@font/aclonica"
-        android:inputType="number"
-
-        android:textColor="#C6FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwd"
-        app:layout_constraintVertical_bias="0.046" />
-
-    <EditText
-        android:id="@+id/pwd"
-        android:layout_width="360dp"
-        android:layout_height="57dp"
-        android:hint="@string/Enter_a_six_digits_number"
-        android:background="@drawable/edit_rounded"
-        android:drawableStart="@drawable/ic_lock_24"
-        android:ems="10"
-        android:fontFamily="@font/aclonica"
-        android:inputType="number"
-
-        android:textColor="#C6FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
-
-    <EditText
-        android:id="@+id/Usernametxt"
-        android:layout_width="360dp"
-        android:layout_height="47dp"
-        android:background="@drawable/edit_rounded"
-        android:drawableStart="@drawable/ic_baseline_account_circle_24"
-        android:ems="10"
-        android:hint="@string/Username"
-        android:fontFamily="@font/aclonica"
-        android:inputType="textPersonName"
-
-        android:textColor="#C6FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/pwd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.899" />
-
-    <TextView
-        android:id="@+id/information"
-        android:layout_width="317dp"
-        android:layout_height="111dp"
-        android:layout_marginBottom="52dp"
-        android:fontFamily="@font/aclonica"
-
-        android:textColor="#FF050505"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setpassword" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="109dp"
-        android:layout_height="89dp"
-        app:layout_constraintBottom_toTopOf="@+id/Usernametxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/avatar" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="191dp"
-        android:layout_height="54dp"
-        android:background="@drawable/edit_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmpwd"
-        app:layout_constraintVertical_bias="0.083">
-
-        <RadioButton
-            android:id="@+id/calculatorcheck"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-
+            android:layout_height="160dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:background="@color/colorAccent"
+            android:src="@drawable/addphoto"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:srcCompat="@drawable/ic_launcher_foreground" />
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_below="@id/imageView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#0C0D79C1"
-            android:fontFamily="@font/aclonica"
-            android:text="Calculator"
-            android:textColor="#C6FFFFFF"
-            android:textSize="17sp" />
+            android:hint="Name"
+            android:layout_centerHorizontal="true"
+            android:ems="10"/>
+        <EditText
+            android:id="@+id/edtAge"
+            android:layout_below="@id/edtName"
+            android:hint="Description"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edtPhone"
+            android:layout_below="@id/edtAge"
+            android:hint="Venue"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_below="@id/edtPhone"
+            android:background="@drawable/btn_rounded"
+            android:layout_centerHorizontal="true"
+            android:minWidth="160dp"
+            android:text="Save Record"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnList"
+            android:layout_below="@id/btnAdd"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_rounded"
+            android:minWidth="160dp"
+            android:text="Record List"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-        <RadioButton
-            android:id="@+id/callrecordercheck"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#0C0D79C1"
-            android:fontFamily="@font/aclonica"
-            android:text="Call Recorder"
-            android:textColor="#C6FFFFFF"
-            android:textSize="17sp" />
-    </RadioGroup>
+    </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

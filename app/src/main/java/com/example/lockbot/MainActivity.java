@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,11 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
-import com.basgeekball.awesomevalidation.utility.RegexTemplate;
-
-import org.w3c.dom.Text;
-
-import java.util.prefs.Preferences;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper db;
@@ -38,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_mahe);
         db=new DatabaseHelper(this);
 
 
@@ -164,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
                         }
 
-                        Toast.makeText(MainActivity.this, "callrecorder", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "calculator", Toast.LENGTH_SHORT).show();
                     }
                 }else{
                     Toast.makeText(MainActivity.this, "password mismatch", Toast.LENGTH_SHORT).show();
@@ -334,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
         }else if (rbutton2.isChecked()){
             Toast.makeText(MainActivity.this, "calculator", Toast.LENGTH_SHORT).show();
         }else if (rbutton1.isChecked()){
-            Toast.makeText(MainActivity.this, "callrecorder", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "calculator", Toast.LENGTH_SHORT).show();
         }
 
 

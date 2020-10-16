@@ -18,8 +18,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVViewHolderClass>
 
     ArrayList<ModelClass>objectModelClassList;
 
-    public RVAdapter(ArrayList<ModelClass> objectModelClassList){
+    private static RecyclerViewClickInterface recyclerViewClickInterface;
+
+    public RVAdapter(ArrayList<ModelClass> objectModelClassList, RecyclerViewClickInterface recyclerViewClickInterface){
         this.objectModelClassList = objectModelClassList;
+        this.recyclerViewClickInterface = recyclerViewClickInterface;
     }
 
     /**/
@@ -49,8 +52,29 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVViewHolderClass>
         public RVViewHolderClass(@NonNull View itemView){
             super(itemView);
             imageNameTV=itemView.findViewById(R.id.sr_imageDetailsTV);
-
             objectImageView= itemView.findViewById(R.id.sr_imageTV);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    recyclerViewClickInterface.onItemClick(getAdapterPosition());
+                }
+            });//  itemView.setOnClickListener(n
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    //       imageNameTV.remove(getAdapterPosition());
+                    //       objectImageView.remove(getAdapterPosition());
+
+                    recyclerViewClickInterface.onLongItemClick(getAdapterPosition());
+
+                    return true;
+                }
+            });{
+
+            }//itemView.setOnLongClickListener
         }
 
     }

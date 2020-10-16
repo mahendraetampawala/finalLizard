@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ImageGallery" >
+    tools:context=".insertImages"
+    android:background="@drawable/photo">
 
     <include
         android:id="@+id/toolbarX"
@@ -12,6 +13,41 @@
         android:background="#FFFDFD"
         app:navigationIcon="@android:drawable/btn_star" />
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/homeTextLower"
+        android:fontFamily="@font/aclonica"
+        app:layout_constraintEnd_toStartOf="@+id/imageLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/homeTextUpper"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarX" />
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/homeLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarX"
+        app:srcCompat="@drawable/lizardsfinal" />
+
+    <!--
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutSend"
         android:layout_width="60dp"
@@ -39,69 +75,97 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+-->
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:id="@+id/linearLayoutHome2_1"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginTop="250dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarX">
+        app:layout_constraintTop_toTopOf="parent">
 
         <!--card1-->
         <androidx.cardview.widget.CardView
             android:id="@+id/galleryCard_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardElevation="5dp">
 
             <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/card_1"
                 android:elevation="8dp">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
+                    android:id="@+id/addNew"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
                     android:contentDescription="@string/galleryAddImageImgView"
                     app:srcCompat="@drawable/addimages"
-                    tools:srcCompat="@drawable/addimages">
+                    tools:srcCompat="@drawable/addimages" />
 
-                </ImageView>
+                <TextView
+                    android:id="@+id/image_gallery_txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addNew"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/aclonica"
+                    android:text="@string/txtInsert"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
             <!--
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/galleryTxtAddImg"
-                            android:textAlignment="center" />
-            -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/galleryTxtAddImg"
+                android:textAlignment="center" />
+-->
         </androidx.cardview.widget.CardView>
 
         <!--card2-->
         <androidx.cardview.widget.CardView
             android:id="@+id/galleryCard_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardElevation="5dp">
 
             <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/card_2"
                 android:elevation="8dp">
 
+                <TextView
+                    android:id="@+id/image_gallery_txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/show"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtShow"
+                    android:fontFamily="@font/aclonica"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:id="@+id/show"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_centerInParent="true"
                     android:contentDescription="@string/galleryImgRetreive"
                     app:srcCompat="@drawable/fetch"
@@ -111,107 +175,112 @@
 
             </RelativeLayout>
             <!--
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/galleryTxtRetreive"
-                            android:textAlignment="center" />
-            -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/galleryTxtRetreive"
+                android:textAlignment="center" />
+-->
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutHome2_2"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutHome2_1">
+
 
         <!--card3-->
         <androidx.cardview.widget.CardView
             android:id="@+id/galleryCard_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardElevation="5dp">
 
             <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/card_3"
                 android:elevation="8dp">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:id="@+id/restore"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
                     android:contentDescription="@string/galleryImgRestore"
                     app:srcCompat="@drawable/restore1"
-                    tools:srcCompat="@drawable/restore1">
+                    tools:srcCompat="@drawable/restore1" />
 
-                </ImageView>
+                <TextView
+                    android:id="@+id/image_gallery_txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/restore"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtRestore"
+                    android:fontFamily="@font/aclonica"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
-            <!--
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/galleryTxtRestore"
-                            android:textAlignment="center" />
-            -->
+
         </androidx.cardview.widget.CardView>
 
+
         <!--card4-->
-        <!--ddddddd-->
         <androidx.cardview.widget.CardView
             android:id="@+id/galleryCard_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!--
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="bottom|center_horizontal"
-                            android:text="@string/galleryTxtDelete"
-                            android:textAlignment="center" />
-            -->
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardElevation="5dp">
+
             <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/card_4"
                 android:elevation="8dp">
 
+                <TextView
+                    android:id="@+id/image_gallery_txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/delete"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txtDelete"
+                    android:fontFamily="@font/aclonica"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:id="@+id/delete"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
                     android:contentDescription="@string/galleryImgDelete"
                     app:srcCompat="@drawable/delete1"
-                    tools:srcCompat="@drawable/delete1">
-
-                </ImageView>
+                    tools:srcCompat="@drawable/delete1" />
 
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="279dp"
-            tools:layout_editor_absoluteY="56dp" />
-
-
-    </RelativeLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

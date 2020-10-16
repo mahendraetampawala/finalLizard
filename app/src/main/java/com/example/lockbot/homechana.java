@@ -1,15 +1,22 @@
 package com.example.lockbot;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 
 public class homechana extends AppCompatActivity implements View.OnClickListener {
@@ -21,7 +28,7 @@ public class homechana extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_homechana);
+        setContentView(R.layout.nav_homechana);
 
         toolbarX = findViewById(R.id.toolbarX);
         setSupportActionBar(toolbarX);
@@ -35,6 +42,25 @@ public class homechana extends AppCompatActivity implements View.OnClickListener
         card2.setOnClickListener(this);
         card3.setOnClickListener(this);
         card4.setOnClickListener(this);
+
+        NavigationView navigationView=findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+               if (item.getItemId()==R.id.nav_home){
+                   startActivity(new Intent(homechana.this,resourceManager.class));
+               }
+               if (item.getItemId()==R.id.nav_gallery){
+                   startActivity(new Intent(homechana.this,homechana.class));
+               }
+                DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
+               drawerLayout.closeDrawer(GravityCompat.START);
+               return true;
+            }
+        });
+
+
+
     }
 
     @Override
@@ -59,6 +85,10 @@ public class homechana extends AppCompatActivity implements View.OnClickListener
                 break;
 
         }
+
+    }
+    @Override
+    public void onBackPressed(){
 
     }
 }

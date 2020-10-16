@@ -1,12 +1,17 @@
 package com.example.lockbot;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,6 +22,7 @@ import android.widget.Toast;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
 
@@ -24,6 +30,7 @@ import java.util.prefs.Preferences;
 
 public class resourceManager extends AppCompatActivity {
     DatabaseHelper db;
+    private Toolbar toolbarX;
     EditText edit2,edit3,edit1;
     SharedPreferences preferences;
 
@@ -32,9 +39,27 @@ public class resourceManager extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resource_manager);
+        setContentView(R.layout.nav_resourcemanager);
         db=new DatabaseHelper(this);
 
+        toolbarX = findViewById(R.id.toolbarX);
+        setSupportActionBar(toolbarX);
+
+        NavigationView navigationView=findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId()==R.id.nav_home){
+                    startActivity(new Intent(resourceManager.this,resourceManager.class));
+                }
+                if (item.getItemId()==R.id.nav_gallery){
+                    startActivity(new Intent(resourceManager.this,homechana.class));
+                }
+                DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
 
         Cursor cursor = db.showname();
 

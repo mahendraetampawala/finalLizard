@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lock Bot</string>
+    <string name="app_name">LIZARD APP</string>
     <string name="label1">SET YOUR PASSWORD</string>
     <string name="pwlabel">Password</string>
     <string name="reenterlabel">Reenter password</string>
@@ -13,12 +13,17 @@
     <string name="caldelete">AC</string>
     <string name="calone">1</string>
     <string name="caltwo">2</string>
+    <string name="txtRestore">Restore</string>
     <string name="calthree">3</string>
     <string name="calfour">4</string>
+    <string name="txtInsert">Insert</string>
+    <string name="txtDelete">Delete</string>
+    <string name="txtAddImages">Click on image to add files...</string>
     <string name="calfive">5</string>
     <string name="calsix">6</string>
     <string name="calseven">7</string>
     <string name="caleight">8</string>
+    <string name="txtShow">Show</string>
     <string name="calnine">9</string>
     <string name="calzero">0</string>
     <string name="calplus">+</string>
@@ -79,5 +84,21 @@
     <string name="image_details_single_new">Image Details</string>
     <string name="image_single_new">image_single_new</string>
     <string name="show_images">Show Images</string>
+    <string name="todo">TODO</string>
+    <string name="navi_drawer_txt_below">navi_drawer_txt_below</string>
+    <string name="nav_drawer_img_x">nav_drawer_img_x</string>
+
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="nav_header_title">Welcome to</string>
+    <string name="nav_header_subtitle">LIZARD APP</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Update Password</string>
+    <string name="menu_gallery">Home</string>
+    <string name="menu_slideshow">Recycle</string>
 
 </resources>

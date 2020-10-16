@@ -27,7 +27,7 @@ public class insertImages extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_images);
+        setContentView(R.layout.nav_insertimg);
         try {
             imageDetailsET = findViewById(R.id.imageNameET);
             objectImageView = findViewById(R.id.imageX);
@@ -82,12 +82,12 @@ public class insertImages extends AppCompatActivity {
             Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
         }
     }
-
+/*
     public void moveToShowActivity(View view){
         startActivity(new Intent(this,showImages.class));
     }
 
-
+*/
 
 
 }//cls

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_centerHorizontal="false"
     android:layout_centerVertical="false"
-    android:background="#FDFDFD"
+    android:background="@drawable/photo"
     tools:context=".MainActivity">
 
     <!--for bugs-->
@@ -20,6 +20,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/homeTextLower"
+            android:textAlignment="center"
+            android:textColor="#C6050000"
             app:layout_constraintEnd_toStartOf="@+id/imageLogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -30,6 +32,8 @@
             android:background="#FFFDFD"
             app:navigationIcon="@android:drawable/btn_star" />
 
+
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"
@@ -37,6 +41,8 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/baloo"
             android:text="@string/homeTextUpper"
+            android:textAlignment="center"
+            android:textColor="#C6000000"
             android:textSize="30sp"
             app:layout_constraintEnd_toStartOf="@+id/imageLogo"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +57,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/toolbarX"
-            app:srcCompat="@drawable/newlogo" />
+            app:srcCompat="@drawable/lizardsfinal" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -70,11 +76,13 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="#E4DFDF"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#E4DFDF">
 
                     <TextView
                         android:id="@+id/textView3"
@@ -83,6 +91,7 @@
                         android:layout_below="@id/imageView2"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
+                        android:textColor="#0E0B0B"
                         android:text="@string/btnHomeImages"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -107,7 +116,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#E4DFDF">
 
                     <TextView
                         android:id="@+id/textView4"
@@ -117,6 +127,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
                         android:text="@string/abnHomeAudio"
+                        android:textColor="#0E0B0B"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -152,7 +163,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#E4DFDF">
 
                     <TextView
                         android:id="@+id/textView5"
@@ -162,6 +174,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
                         android:text="@string/btnHomeVideo"
+                        android:textColor="#0E0B0B"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -187,7 +200,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#E4DFDF">
 
                     <TextView
                         android:id="@+id/textView6"
@@ -198,6 +212,7 @@
                         android:layout_marginTop="5dp"
                         android:text="@string/btnHomeCallRecords"
                         android:textSize="14sp"
+                        android:textColor="#0E0B0B"
                         android:textStyle="bold" />
 
                     <ImageView
